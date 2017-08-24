@@ -1,9 +1,9 @@
-public class Civil extends Personnage{
-    public void combattre() {
-        System.out.println("Je ne combats PAS !");
-    }
+import com.ocr.comportement.*;
 
-    public void seDeplacer() {
-        System.out.println("Je me déplace à pied.");
+public class Civil extends Personnage{
+    public Civil() {}
+
+    public Civil(EspritCombatif esprit, Soin soin, Deplacement dep) {
+        super(esprit, soin, dep);
     }
 }

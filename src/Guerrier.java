@@ -1,10 +1,10 @@
+import com.ocr.comportement.*;
+
 public class Guerrier extends Personnage {
-
-    public void combattre() {
-        System.out.println("Fusil, pistolet, couteau ! Tout ce que tu veux !");
+    public Guerrier(){
+        this.espritCombatif = new CombatPistolet();
     }
-
-    public void seDeplacer() {
-        System.out.println("Je me déplace à pied.");
+    public Guerrier(EspritCombatif esprit, Soin soin, Deplacement dep) {
+        super(esprit, soin, dep);
     }
 }
