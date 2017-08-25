@@ -1,4 +1,4 @@
-package com.ocp.test;
+//package com.ocp.test;
 
 public class Ville {
 
@@ -15,13 +15,18 @@ public class Ville {
         this.setCategorie();
     }
 
-    public Ville(String pNom, int pNbre, String pPays)
-    {
-        System.out.println("Création d'une ville avec des paramètres !");
-        nomVille = pNom;
-        nomPays = pPays;
-        nbreHabitants = pNbre;
-        this.setCategorie();
+    public Ville(String pNom, int pNbre, String pPays) throws NombreHabitantException {
+
+        if(pNbre < 0)
+            throw new NombreHabitantException(pNbre);
+        else
+        {
+            System.out.println("Création d'une ville avec paramètres !");
+            nomVille = pNom;
+            nomPays = pPays;
+            nbreHabitants = pNbre;
+            this.setCategorie();
+        }
     }
 
     //Retourne le nom de la ville

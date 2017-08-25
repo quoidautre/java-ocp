@@ -1,7 +1,15 @@
-import com.ocp.test;
 
 public class TestVille {
-    public static void main(String[] args) {
-        Ville ville = new Ville("Aix",123,"France");
+    public static void main(String[] args)
+    {
+        Ville v = null;
+        try {
+            v = new Ville("Rennes", 12000, "France");
+        } catch (NombreHabitantException e) {   }
+        finally{
+            if(v == null)
+                v = new Ville();
+        }
+        System.out.println(v.toString());
     }
 }
