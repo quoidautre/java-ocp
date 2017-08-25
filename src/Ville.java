@@ -15,10 +15,13 @@ public class Ville {
         this.setCategorie();
     }
 
-    public Ville(String pNom, int pNbre, String pPays) throws NombreHabitantException {
+    public Ville(String pNom, int pNbre, String pPays) throws NombreHabitantException, NomVilleException {
 
         if(pNbre < 0)
             throw new NombreHabitantException(pNbre);
+
+        if(pNom.length() < 3)
+            throw new NomVilleException("le nom de la ville est inférieur à 3 caractères ! nom = " + pNom);
         else
         {
             System.out.println("Création d'une ville avec paramètres !");
